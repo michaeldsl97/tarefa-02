@@ -1,21 +1,28 @@
 const usuarios = [
     {
-        id: 1,
+        id: 0001,
         nome: "Cristiano Ronaldo",
         sobrenome: "dos Santos Aveiro",
-        idade: 38
+        idade: 38,
+        email: "cr7@gmail.com",
+        senha: 072877
     },
     {
-        id: 2,
+        id: 0002,
         nome: "Neymar",
         sobrenome: "da Silva Santos",
-        idade: 31
+        idade: 31,
+        email: "meninoney@outlook.com",
+        senha: 520169
     },
     {
-        id: 3,
+        id: 0003,
         nome: "Lionel",
         sobrenome: "Andrés Messi Cuccittini",
-        idade: 35
+        idade: 35,
+        email: "messi10@gmail.com",
+        senha: 103054
+
     }
 ]
 
@@ -30,8 +37,8 @@ const findAllUsuarios = (req,res) => {
 
 const createUsuario = (req,res) => {
     const usuario = req.body;
-    if(req.body.nome == null){
-        return res.send({messege:"Campo não está preenchido"});
+    if(req.body.id == null){
+        return res.send({messege:"Id não está preenchido"});
     }
     usuarios.push(usuario);
     res.send(usuarios);
